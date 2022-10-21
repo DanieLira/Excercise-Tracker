@@ -1,10 +1,25 @@
 import React from 'react'
+import Navbar from './components/Navbar'
 
 export default function App() {
   
+  const [darkMode, setDarkMode] = React.useState(false)
+
+  function toggleDarkMode(){
+    setDarkMode(prevState => !prevState)
+  }
+
+  React.useEffect(() => {
+    const style = darkMode ? "dark" : ""
+    document.getElementById("htmlTag").className = style;
+  },[darkMode])
+
   return (
-   <div className='w-80 h-80 bg-slate-800'>
-      <Navbar />
+   <div>
+      <Navbar 
+        darkMode={darkMode} 
+        toggleDarkMode={toggleDarkMode}
+      />
       {/* <UserForm />
       <ExcerciseForm />
       <UserStatus /> */}

@@ -1,12 +1,19 @@
 import React from 'react'
 import Navbar from './components/Navbar'
+import FormSideBar from './components/FormSideBar'
+import Dashboard from './components/Dashboard'
 
 export default function App() {
   
   const [darkMode, setDarkMode] = React.useState(false)
+  const [showSideBar, setShowSideBar] = React.useState(true)
 
   function toggleDarkMode(){
     setDarkMode(prevState => !prevState)
+  }
+
+  function toggleSideBar(){
+    setShowSideBar(prevState => !prevState)
   }
 
   React.useEffect(() => {
@@ -20,9 +27,11 @@ export default function App() {
         darkMode={darkMode} 
         toggleDarkMode={toggleDarkMode}
       />
-      {/* <UserForm />
-      <ExcerciseForm />
-      <UserStatus /> */}
+      <FormSideBar 
+        showSideBar={showSideBar}
+        toggleSideBar={toggleSideBar}  
+      />
+      <Dashboard />
    </div>
   )
 }

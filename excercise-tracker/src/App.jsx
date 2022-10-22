@@ -4,35 +4,37 @@ import FormSideBar from './components/FormSideBar'
 import Dashboard from './components/Dashboard'
 
 export default function App() {
-  
+
   const [darkMode, setDarkMode] = React.useState(false)
   const [showSideBar, setShowSideBar] = React.useState(true)
 
-  function toggleDarkMode(){
+  function toggleDarkMode() {
     setDarkMode(prevState => !prevState)
   }
 
-  function toggleSideBar(){
+  function toggleSideBar() {
     setShowSideBar(prevState => !prevState)
   }
 
   React.useEffect(() => {
     const style = darkMode ? "dark" : ""
     document.getElementById("htmlTag").className = style;
-  },[darkMode])
+  }, [darkMode])
 
   return (
-   <div>
-      <Navbar 
-        darkMode={darkMode} 
+    <div className="bg-slate-100 h-screen">
+      <Navbar
+        darkMode={darkMode}
         toggleDarkMode={toggleDarkMode}
       />
-      <FormSideBar 
-        showSideBar={showSideBar}
-        toggleSideBar={toggleSideBar}  
-      />
-      <Dashboard />
-   </div>
+      <div className="flex">
+        <FormSideBar
+          showSideBar={showSideBar}
+          toggleSideBar={toggleSideBar}
+        />
+        <Dashboard showSideBar={showSideBar}/>
+      </div>
+    </div>
   )
 }
 

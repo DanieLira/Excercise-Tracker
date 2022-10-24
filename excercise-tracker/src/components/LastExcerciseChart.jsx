@@ -1,27 +1,29 @@
 import React from "react"
-import Chart from "react-apexcharts";
+import Chart from "react-apexcharts"
+import excercises from "../test-scripts/test-excercises"
 
-export default function TemporaryChart() {
-
+export default function LastExcerciseChart() {
+  
   const [chartOptions, setChartOptions] = React.useState({
     options: {
       chart: {
         id: "basic-bar"
       },
       xaxis: {
-        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
+        categories: excercises.map(exce => exce.date)
       }
     },
     series: [
       {
-        name: "series-1",
-        data: [30, 40, 45, 50, 49, 60, 70, 91]
+        name: "Duration",
+        data: excercises.map(exce => exce.duration)
       }
     ]
   })
 
   return (
     <div className="bg-slate-50 rounded-lg drop-shadow-md">
+      <h3 className="">Your last exercises</h3>
       <Chart
         options={chartOptions.options}
         series={chartOptions.series}

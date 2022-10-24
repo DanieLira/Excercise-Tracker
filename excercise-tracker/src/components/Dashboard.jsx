@@ -1,5 +1,5 @@
 import React from "react"
-import TemporaryChart from "./TemporaryChart"
+import LastExcerciseChart from "./LastExcerciseChart"
 
 export default function Dashboard(props) {
     
@@ -7,7 +7,7 @@ export default function Dashboard(props) {
 
     return (
         <div className={`pt-5 ${padding}`}>
-            <TemporaryChart />
+            <LastExcerciseChart />
         </div>
     )
 }

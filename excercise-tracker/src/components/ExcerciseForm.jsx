@@ -1,19 +1,20 @@
 import React from "react"
+import { BiRun } from "react-icons/bi"
 
 export default function ExcerciseForm() {
-    
-    const [excerciseData , setExcerciseData] = React.useState({
-        "description":"",
-        "minutes":0,
-        "date":""
+
+    const [excerciseData, setExcerciseData] = React.useState({
+        "description": "",
+        "minutes": 0,
+        "date": ""
     })
-    
-    function handleChange(event){
-        const {name, value} = event.target
+
+    function handleChange(event) {
+        const { name, value } = event.target
         setExcerciseData(prevState => {
             return {
                 ...prevState,
-                [name] : value
+                [name]: value
             }
         })
         console.log(excerciseData)
@@ -21,11 +22,14 @@ export default function ExcerciseForm() {
 
     return (
         <form className="bg-slate-600 h-fit rounded-md m-2 flex flex-col items-start justify-center pl-5 pt-5 pb-5">
-            <h3 className="text-slate-100 font-semibold mb-6">Add Excercise for [user]</h3>
+            <h3 className="text-slate-100 font-semibold mb-6 flex items-center ">
+                <BiRun className="text-xl mr-2"/>
+                Add Excercise for [user]
+            </h3>
             <label htmlFor="description" className="text-slate-100 font-semibold">
                 Description
             </label>
-            <input 
+            <input
                 name="description"
                 type="text"
                 value={excerciseData.description}
@@ -36,7 +40,7 @@ export default function ExcerciseForm() {
             <label htmlFor="minutes" className="text-slate-100 font-semibold">
                 Minutes
             </label>
-            <input 
+            <input
                 name="minutes"
                 type="number"
                 value={excerciseData.minutes}
@@ -47,7 +51,7 @@ export default function ExcerciseForm() {
             <label htmlFor="date" className="text-slate-100 font-semibold">
                 Date
             </label>
-            <input 
+            <input
                 name="date"
                 type="date"
                 value={excerciseData.date}

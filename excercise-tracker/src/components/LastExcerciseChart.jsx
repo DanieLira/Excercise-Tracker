@@ -22,7 +22,7 @@ export default function LastExcerciseChart() {
   })
 
   return (
-    <div className="bg-slate-50 rounded-lg drop-shadow-md">
+    <div className="bg-slate-50 rounded-lg drop-shadow-md w-fit p-2">
       <h3 className="">Your last exercises</h3>
       <Chart
         options={chartOptions.options}

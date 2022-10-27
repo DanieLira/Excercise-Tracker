@@ -1,19 +1,22 @@
 import React from "react"
+import { AiOutlineUserAdd } from "react-icons/ai"
 
 export default function UserForm() {
     const [userName, setUserName] = React.useState("")
-    
-    function handleChange(event){
-        const {value} = event.target
+
+    function handleChange(event) {
+        const { value } = event.target
         setUserName(value)
     }
 
     return (
         <form className="bg-slate-600 h-fit rounded-md m-2 flex flex-col items-start justify-center pl-5 pt-5 pb-5">
-            <label htmlFor="userName" className="text-slate-100 pb-3 font-semibold">
+
+            <label htmlFor="userName" className="text-slate-100 pb-3 font-semibold flex items-center">
+                <AiOutlineUserAdd className="mr-2 text-xl"/>
                 Create New User
             </label>
-            <input 
+            <input
                 name="userName"
                 type="text"
                 value={userName}

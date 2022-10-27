@@ -23,8 +23,8 @@ export default function LastExcerciseChart() {
   })
 
   return (
-    <div className="bg-slate-50 rounded-lg drop-shadow-md w-fit p-5">
-      <h3 className="text-sm font-semibold text-slate-400">YOUR LAST EXERCISES</h3>
+    <div className="bg-slate-50 rounded-lg drop-shadow-md w-fit p-5 mr-5">
+      <h3 className="text-sm font-semibold text-slate-400">YOUR LAST CARDIO EXERCISES</h3>
       <Chart
         options={chartOptions.options}
         series={chartOptions.series}

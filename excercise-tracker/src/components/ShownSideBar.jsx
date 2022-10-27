@@ -1,6 +1,7 @@
 import React from "react"
 import UserForm from "./UserForm"
 import ExcerciseForm from "./ExcerciseForm"
+import UserSelector from "./UserSelector"
 import {BsFillArrowLeftSquareFill} from "react-icons/bs"
 
 export default function ShownSideBar(props) {
@@ -10,6 +11,7 @@ export default function ShownSideBar(props) {
                 onClick={props.toggleSideBar}
                 className="text-slate-300 text-4xl cursor-pointer self-end mb-3 mr-2"
             />
+            <UserSelector />
             <UserForm />
             <ExcerciseForm />
         </div>

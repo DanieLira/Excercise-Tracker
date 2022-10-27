@@ -10,20 +10,21 @@ export default function LastExcerciseChart() {
         id: "basic-bar"
       },
       xaxis: {
-        categories: excercises.map(exce => exce.date)
+        name:"Date",
+        categories: excercises.map(exe => exe.date)
       }
     },
     series: [
       {
         name: "Duration",
-        data: excercises.map(exce => exce.duration)
+        data: excercises.map(exe => exe.duration)
       }
     ]
   })
 
   return (
-    <div className="bg-slate-50 rounded-lg drop-shadow-md w-fit p-2">
-      <h3 className="">Your last exercises</h3>
+    <div className="bg-slate-50 rounded-lg drop-shadow-md w-fit p-5">
+      <h3 className="text-sm font-semibold text-slate-400">YOUR LAST EXERCISES</h3>
       <Chart
         options={chartOptions.options}
         series={chartOptions.series}
